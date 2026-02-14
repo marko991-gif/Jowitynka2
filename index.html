@@ -64,7 +64,7 @@
   #yes-page p { font-size: 1.5em; text-align:center; margin-bottom: 20px; color:#fff; text-shadow:1px 1px 2px #e60073; }
   #yes-page img { width: 250px; max-width: 80%; border-radius:12px; margin-bottom:20px; }
 
-  #no-page h1 { font-size: 2em; color:#fff; text-align:center; margin-bottom:30px; }
+  #no-page { background:#5555aa; }
 
   /* spadające buziaki na yes-page */
   .kiss {
@@ -120,8 +120,8 @@
   <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/carnation-1990920_1280.png" alt="Różowe goździki">
 </div>
 
-<div id="no-page" style="background:#5555aa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
-  <h1>😢 Smutna minka… Może następnym razem?</h1>
+<div id="no-page">
+  <img src="https://cdn.pixabay.com/photo/2016/12/13/05/48/sad-1907217_1280.png" alt="Smutna minka" style="width:200px; max-width:50%;">
 </div>
 
 <audio id="kissSound" src="https://www.soundjay.com/human/sounds/kiss-01.mp3" preload="auto"></audio>
@@ -134,7 +134,7 @@ const yesPage = document.getElementById('yes-page');
 const noPage = document.getElementById('no-page');
 const kissSound = document.getElementById('kissSound');
 
-// kliknięcie "Nie" -> od razu strona ze smutną minką
+// kliknięcie "Nie" -> od razu strona z obrazkiem smutnej mink
 noBtn.addEventListener('click', () => {
   mainPage.style.display = 'none';
   noPage.style.display = 'flex';
@@ -149,7 +149,7 @@ yesBtn.addEventListener('click', () => {
   startKisses();
 });
 
-// funkcja generująca spadające buziaki
+// spadające buziaki
 function startKisses() {
   setInterval(() => {
     const kiss = document.createElement('div');
@@ -163,7 +163,7 @@ function startKisses() {
   }, 300);
 }
 
-// funkcja generująca migające serduszka
+// migające serduszka
 function startHearts() {
   setInterval(() => {
     const heart = document.createElement('div');
